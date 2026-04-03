@@ -1,0 +1,47 @@
+{
+  "name": "white-model-generator",
+  "version": "1.0.0",
+  "description": "建筑轮廓 SHP 转 3D Tiles 白膜生成器",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:python": "powershell -ExecutionPolicy Bypass -File build-python.ps1",
+    "build:win": "npm run build:python && electron-builder --win",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^34.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.whitemodel.generator",
+    "productName": "3D Tiles 白膜生成器",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js"
+    ],
+    "extraResources": [
+      {
+        "from": "python_dist/gen_3dtiles_lod/",
+        "to": "python/"
+      }
+    ],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "sign": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

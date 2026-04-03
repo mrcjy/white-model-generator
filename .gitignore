@@ -1,0 +1,23 @@
+# Node
+node_modules/
+
+# Electron 打包输出
+release/
+dist/
+
+# Python 编译产物
+python_dist/
+.venv-build/
+.pyinstaller-build/
+*.spec
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+#claude
+.claude/
