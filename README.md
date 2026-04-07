@@ -2,6 +2,12 @@
 
 将建筑轮廓 Shapefile 转换为 3D Tiles 1.1 格式白膜的桌面应用，支持多级 LOD 四叉树切分，可直接加载到 Cesium 等三维平台。
 
+## 下载
+
+前往 [Releases](https://github.com/mrcjy/white-model-generator/releases/latest) 页面，下载最新版本的 `3D Tiles 白膜生成器 Setup x.x.x.exe`，安装后即可使用。
+
+> 仅支持 Windows x64，无需安装 Python 或其他依赖。
+
 ## 功能
 
 - 选择建筑轮廓 `.shp` 文件，自动读取字段列表
@@ -13,9 +19,9 @@
 - 实时进度条、速率、预计剩余时间显示
 - 输出标准 `tileset.json` + `tiles/` 目录结构
 
-## 使用（安装包）
+## 使用
 
-下载 `release/` 目录中的 `3D Tiles 白膜生成器 Setup x.x.x.exe`，安装后直接运行，无需安装 Python 或其他依赖。
+安装完成后直接打开应用：
 
 1. 点击 **选择文件** 选择建筑轮廓 `.shp` 文件
 2. 在下拉框中选择高度属性字段
