@@ -33,6 +33,12 @@ import sys
 import time
 import warnings
 
+# 强制 UTF-8 输出，避免 Windows GBK 控制台和 PyInstaller 打包环境下 emoji/中文编码错误
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+
 warnings.filterwarnings("ignore", category=UserWarning, message=".*Geometry is in a geographic CRS.*")
 
 import geopandas as gpd
